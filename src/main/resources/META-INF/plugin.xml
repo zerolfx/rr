@@ -1,25 +1,25 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.zerolfx.rr</id>
+    <id>me.zerol.rr</id>
     <name>rr</name>
-    <vendor>zerolfx</vendor>
+    <vendor>zerol</vendor>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.cidr.debugger</depends>
 
 
     <actions>
-        <action id="ReverseContinue"
-                class="com.github.zerolfx.rr.ReverseResumeAction" text="Reverse Resume">
-            <add-to-group group-id="XDebugger.ToolWindow.LeftToolbar" anchor="after" relative-to-action="Resume"/>
+        <action id="ReverseResume"
+                class="me.zerol.rr.ReverseResumeAction" text="Reverse Resume">
+            <add-to-group group-id="XDebugger.ToolWindow.LeftToolbar" anchor="before" relative-to-action="Resume"/>
         </action>
-        <action id="ReverseStepInto" class="com.github.zerolfx.rr.ReverseStepIntoAction"
+        <action id="ReverseStepInto" class="me.zerol.rr.ReverseStepIntoAction"
                 text="Reverse Step Into">
         </action>
-        <action id="ReverseStepOver" class="com.github.zerolfx.rr.ReverseStepOverAction"
+        <action id="ReverseStepOver" class="me.zerol.rr.ReverseStepOverAction"
                 text="Reverse Step Over">
         </action>
-        <action id="ReverseStepOut" class="com.github.zerolfx.rr.ReverseStepOutAction"
+        <action id="ReverseStepOut" class="me.zerol.rr.ReverseStepOutAction"
                 text="Reverse Step Out">
         </action>
 
@@ -34,7 +34,7 @@
             <reference id="ReverseStepOut"/>
             <reference id="ReverseStepInto"/>
             <reference id="ReverseStepOver"/>
-            <reference id="ReverseContinue"/>
+            <reference id="ReverseResume"/>
             <add-to-group group-id="XDebugger.ToolWindow.TopToolbar3" anchor="before" relative-to-action="Resume"/>
         </group>
     </actions>

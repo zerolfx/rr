@@ -1,4 +1,4 @@
-package com.github.zerolfx.rr
+package me.zerol.rr
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -23,7 +23,7 @@ fun getSession(e: AnActionEvent): XDebugSession? {
 abstract class BaseAction(icon: Icon) : AnAction(icon) {
     abstract val cmd: String
 
-    class DebugCommand(val cmd: String) : CidrDebugProcess.SuspendedDebuggerCommand<Void> {
+    class DebugCommand(private val cmd: String) : CidrDebugProcess.SuspendedDebuggerCommand<Void> {
         override fun call(driver: DebuggerDriver): Void? {
             driver.executeInterpreterCommand(cmd)
             return null

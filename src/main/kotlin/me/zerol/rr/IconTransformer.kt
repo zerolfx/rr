@@ -1,4 +1,4 @@
-package com.github.zerolfx.rr
+package me.zerol.rr
 
 import java.awt.Component
 import java.awt.Graphics

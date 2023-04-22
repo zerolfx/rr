@@ -1,4 +1,4 @@
-package com.github.zerolfx.rr
+package me.zerol.rr
 
 import com.intellij.icons.AllIcons
 
