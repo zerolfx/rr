@@ -1,18 +1,41 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.zerolfx.rr</id>
-    <name>rr Template</name>
+    <name>rr</name>
     <vendor>zerolfx</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.cidr.debugger</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.zerolfx.rr.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+    <actions>
+        <action id="ReverseContinue"
+                class="com.github.zerolfx.rr.ReverseResumeAction" text="Reverse Resume">
+            <add-to-group group-id="XDebugger.ToolWindow.LeftToolbar" anchor="after" relative-to-action="Resume"/>
+        </action>
+        <action id="ReverseStepInto" class="com.github.zerolfx.rr.ReverseStepIntoAction"
+                text="Reverse Step Into">
+        </action>
+        <action id="ReverseStepOver" class="com.github.zerolfx.rr.ReverseStepOverAction"
+                text="Reverse Step Over">
+        </action>
+        <action id="ReverseStepOut" class="com.github.zerolfx.rr.ReverseStepOutAction"
+                text="Reverse Step Out">
+        </action>
 
-    <applicationListeners>
-        <listener class="com.github.zerolfx.rr.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
-    </applicationListeners>
+        <group id="ReverseControls">
+            <reference id="ReverseStepOut"/>
+            <reference id="ReverseStepInto"/>
+            <reference id="ReverseStepOver"/>
+            <add-to-group group-id="XDebugger.ToolWindow.TopToolbar" anchor="before" relative-to-action="StepOver"/>
+        </group>
+
+        <group id="ReverseControls2">
+            <reference id="ReverseStepOut"/>
+            <reference id="ReverseStepInto"/>
+            <reference id="ReverseStepOver"/>
+            <reference id="ReverseContinue"/>
+            <add-to-group group-id="XDebugger.ToolWindow.TopToolbar3" anchor="before" relative-to-action="Resume"/>
+        </group>
+    </actions>
 </idea-plugin>
