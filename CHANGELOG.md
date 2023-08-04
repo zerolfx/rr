@@ -3,5 +3,11 @@
 # rr Changelog
 
 ## [Unreleased]
-### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+## [0.0.2] - 2023-08-04
+
+Support CLion 2023.2
+
+## [0.0.1]
+
+Initial version.
