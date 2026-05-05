@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [0.0.5] - 2026-05-05
+
+Support CLion 2026.1
+
 ## [0.0.4] - 2025-04-19
 
 Support CLion 2025.1
